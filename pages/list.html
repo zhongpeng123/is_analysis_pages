@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../layui/css/layui.css"/>
+</head>
+<body>
+    <div style="margin-top: 20px;margin-left: 20px;">
+        <!--多条件查询的搜索-->
+        图书搜索:
+        <div class="layui-inline">
+            <!--autocomplete="off":禁止浏览器自动填充内容-->
+            <input id="timerange" name="timerange" placeholder="请选择时间范围"  autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-inline">
+            <!--autocomplete="off":禁止浏览器自动填充内容-->
+            <input id="keyword" name="keyword"  placeholder="请输入关键字" autocomplete="off" class="layui-input">
+        </div>
+        <button id="search" type="button" class="layui-btn">
+            <i class="layui-icon">&#xe6c6;</i> 搜索
+        </button>
+    </div>
+
+
+    <table class="layui-hide" id="videolist" lay-filter="videoTable"></table>
+    
+</body>
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/video.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+</html>
