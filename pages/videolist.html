@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/layui/css/layui.css"/>
+</head>
+<body>
+    <div style="margin-top: 20px;margin-left: 20px;">
+        <!--多条件查询的搜索-->
+        视频搜索:
+        <div class="layui-inline">
+            <!--autocomplete="off":禁止浏览器自动填充内容-->
+            <input id="timerange" name="timerange" placeholder="请选择时间范围"  autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-inline">
+            <!--autocomplete="off":禁止浏览器自动填充内容-->
+            <input id="keyword" name="keyword"  placeholder="请输入关键字" autocomplete="off" class="layui-input">
+        </div>
+        <button id="search" type="button" class="layui-btn">
+            <i class="layui-icon">&#xe6c6;</i> 搜索
+        </button>
+    </div>
+
+
+    <table class="layui-hide" id="videolist" lay-filter="videoTable"></table>
+    <script type="text/html" id="barDemo">
+        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    </script>
+    <script type="text/html" id="head-option">
+        <a class="layui-btn" lay-event="upload">上传视频</a>
+        <a class="layui-btn layui-btn-danger" lay-event="delete">批量删除</a>
+    </script>
+    <script type="text/html" id="play_video">
+        <!--可以支持插值表达式的写法-->
+        <button class="layui-btn layui-btn-normal" onclick="play('{{d.videoPath}}')">点击播放视频</button>
+    </script>
+</body>
+<script type="text/javascript" src="/layui/layui.js"></script>
+<script type="text/javascript" src="/js/video.js"></script>
+<script type="text/javascript" src="/js/date.js"></script>
+</html>
